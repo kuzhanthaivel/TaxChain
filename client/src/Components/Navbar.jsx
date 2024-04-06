@@ -15,10 +15,9 @@ export default function Navbar() {
         </div>
       </div>
       <ul className='text-white md:flex hidden list-none flex-row justify-between items-center'>
-        <li className='mx-4 cursor-pointer'><Link to='/' >Home</Link></li>
-        <li className='mx-4 cursor-pointer'><Link to='/services' >Services</Link></li>
-        <li className='mx-4 cursor-pointer'><Link to='/features' >Features</Link></li>
-        <li className='mx-4 cursor-pointer'><Link to='/web3' >Web 3.0</Link></li>
+        <li className='mx-4 cursor-pointer'><a href="#" >Home</a></li>
+        <li className='mx-4 cursor-pointer'><a href="#Services" >Services</a></li>
+        <li className='mx-4 cursor-pointer'><a href="#Transactions" >Transactions</a></li>
       </ul>
       <div className='flex relative'>
       {toggleMenu
@@ -31,10 +30,9 @@ export default function Navbar() {
             <AiOutlineClose fontSize={28} className='text-white cursor-pointer ' onClick={()=>setToggleMenu(false)}/>
           </li>
           <div className='flex mt-10 flex-col gap-5'>
-          <li className='mx-4 cursor-pointer my-2 text-lg font-semibold '>Market</li>
-        <li className='mx-4 cursor-pointer my-2 text-lg font-semibold'>Exchange</li>
-        <li className='mx-4 cursor-pointer my-2 text-lg font-semibold'>Tutorials</li>
-        <li className='mx-4 cursor-pointer my-2 text-lg font-semibold'>Wallet</li>
+          <li className='mx-4 cursor-pointer my-2 text-lg font-semibold'><a href="#" >Home</a></li>
+        <li className='mx-4 cursor-pointer my-2 text-lg font-semibold'><a href="#Services" >Services</a></li>
+        <li className='mx-4 cursor-pointer my-2 text-lg font-semibold'><a href="#Transactions" >Transactions</a></li>
           </div>
         </ul>
       )

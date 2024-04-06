@@ -3,30 +3,23 @@ import {BrowserRouter , Routes, Route, } from 'react-router-dom'
 import Navbar from './Components/Navbar'
 import Services from './Components/Services'
 import Welcome from './Components/Welcome'
-import Features from './Components/Features'
-import Web3 from './Components/Web3'
+import Transactions from './Components/Transactions'
+import Footer from './Components/Footer'
 
 export default function App() {
   return (
-    <BrowserRouter>
-    
+    <div>
 
-    <div className='min-h-screen'>
-      <div className='gradient-bg-welcome'>
+   
+    
         <Navbar  />
-        <Welcome />
-      </div>
-      <div className='gradient-bg-services'>
-      <Services />
-      </div>
+
+    <Welcome />
+    <Services />
+    <Transactions />
+    <Footer />
     </div>
-    <Routes>
-      <Route path='/' element={<Welcome />} />
-      <Route path='/services' element={<Services />} />
-      <Route path='/features' element={<Features />} />
-      <Route path='/web3' element={<Web3 />} />
-      
-    </Routes>
-    </BrowserRouter>
+    
+    
   )
 }
