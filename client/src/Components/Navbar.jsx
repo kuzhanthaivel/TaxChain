@@ -2,22 +2,23 @@ import React, { useState } from 'react'
 import {HiMenuAlt4} from 'react-icons/hi';
 import {AiOutlineClose} from 'react-icons/ai';
 import MetaMask from '../assets/MetaMask.png';
+import { Link } from 'react-router-dom';
 
 export default function Navbar() {
   const [toggleMenu, setToggleMenu] = useState(false);
   return (
     
-    <nav className='w-full flex justify-between lg:justify-center  items-center p-4'>
+    <nav className='w-full flex justify-between lg:justify-center  items-center p-4' >
       <div className='md:flex-[0.5] justify-center items-center'>
         <div className='flex gap-4 items-center mr-5'>
         <img src={MetaMask} alt="MetaMask logo" className='h-14 w-14 cursor-pointer' /><span className='text-white text-2xl font-bold font-mono text-nowrap'><span className='text-3xl font-extrabold'>T</span>axChain</span>
         </div>
       </div>
       <ul className='text-white md:flex hidden list-none flex-row justify-between items-center'>
-        <li className='mx-4 cursor-pointer'>Mome</li>
-        <li className='mx-4 cursor-pointer'>Services</li>
-        <li className='mx-4 cursor-pointer'>Features</li>
-        <li className='mx-4 cursor-pointer'>Web 3.0</li>
+        <li className='mx-4 cursor-pointer'><Link to='/' >Home</Link></li>
+        <li className='mx-4 cursor-pointer'><Link to='/services' >Services</Link></li>
+        <li className='mx-4 cursor-pointer'><Link to='/features' >Features</Link></li>
+        <li className='mx-4 cursor-pointer'><Link to='/web3' >Web 3.0</Link></li>
       </ul>
       <div className='flex relative'>
       {toggleMenu
