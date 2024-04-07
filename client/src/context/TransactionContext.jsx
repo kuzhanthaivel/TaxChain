@@ -27,14 +27,13 @@ export const TransactionsProvider = ({ children }) => {
 
   };
 
-
   
   const getAllTransactions = async () => {
     try {
       if (ethereum) {
         const transactionsContract = createEthereumContract();
 
-        const availableTransactions = await transactionsContract.getAllTransactions().call;
+        const availableTransactions = await transactionsContract.getAllTransactions();
         console.log(availableTransactions);
         const structuredTransactions = availableTransactions.map((transaction) => ({
           addressTo: transaction.receiver,
@@ -111,10 +110,11 @@ export const TransactionsProvider = ({ children }) => {
         const transactionHash = await transactionsContract.addToBlockchain(addressTo, parsedAmount, message);
         setIsLoading(true);
         console.log(`Loading - ${transactionHash.hash}`);
-        await transactionHash.wait();
+        // await transactionHash.wait();
         console.log(`Success - ${transactionHash.hash}`);
         setIsLoading(false);
-        const transactionsCount = await transactionsContract.getTransactionCount().call;
+        window.location.reload();
+        const transactionsCount = await transactionsContract.getTransactionCount();
         setTransactionCount(transactionsCount.toNumber());
         window.location.reload();
       } else {
@@ -132,7 +132,7 @@ export const TransactionsProvider = ({ children }) => {
     try {
       if (ethereum) {
         const transactionsContract = createEthereumContract();
-        const currentTransactionCount = await transactionsContract.getTransactionCount().call; 
+        const currentTransactionCount = await transactionsContract.getTransactionCount(); 
         window.localStorage.setItem("transactionCount", currentTransactionCount);
       }
     } catch (error) {

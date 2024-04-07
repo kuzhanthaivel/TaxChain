@@ -86,7 +86,7 @@ export default function Welcome() {
                   {shortenAddress(currentAccount)}
                 </p>
                 <p className='text-white text-lg font-semibold'>
-                  Income Tax
+                  TaxChain
                 </p>
               </div>
           </div>
